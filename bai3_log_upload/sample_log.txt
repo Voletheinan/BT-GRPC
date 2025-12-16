@@ -1,0 +1,11 @@
+2024-01-01 10:00:00 INFO Application started
+2024-01-01 10:00:05 DEBUG Initializing database connection
+2024-01-01 10:00:10 INFO Database connected successfully
+2024-01-01 10:00:15 WARNING High memory usage detected: 85%
+2024-01-01 10:00:20 INFO User login: user123
+2024-01-01 10:00:25 ERROR Failed to process request: timeout
+2024-01-01 10:00:30 INFO Retrying request...
+2024-01-01 10:00:35 INFO Request processed successfully
+2024-01-01 10:00:40 DEBUG Cache updated for key: session_abc123
+2024-01-01 10:00:45 INFO User logout: user123
+

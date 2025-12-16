@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package log;
+
+service LogService {
+  rpc UploadLog (stream LogRequest) returns (LogResponse);
+}
+
+message LogRequest {
+  string line = 1;
+  int64 timestamp = 2;
+}
+
+message LogResponse {
+  int32 total_lines = 1;
+  int64 total_size = 2;
+  int64 start_time = 3;
+  int64 end_time = 4;
+  double duration_seconds = 5;
+}
+

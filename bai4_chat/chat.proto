@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package chat;
+
+service ChatService {
+  rpc Chat (stream ChatMessage) returns (stream ChatMessage);
+}
+
+message ChatMessage {
+  string client_id = 1;
+  string message = 2;
+  string target_client_id = 3;  // Empty for broadcast, ID for private message
+  int64 timestamp = 4;
+  MessageType type = 5;
+}
+
+enum MessageType {
+  BROADCAST = 0;
+  PRIVATE = 1;
+  JOIN = 2;
+  LEAVE = 3;
+}
+

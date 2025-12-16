@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package price;
+
+service PriceService {
+  rpc GetPrice (GetPriceRequest) returns (PriceResponse);
+  rpc UpdatePrice (UpdatePriceRequest) returns (PriceResponse);
+  rpc GetPrices (GetPricesRequest) returns (PricesResponse);
+}
+
+message Price {
+  int32 product_id = 1;
+  double price = 2;
+  string currency = 3;
+  int64 updated_at = 4;
+}
+
+message GetPriceRequest {
+  int32 product_id = 1;
+}
+
+message UpdatePriceRequest {
+  int32 product_id = 1;
+  double price = 2;
+  string currency = 3;
+}
+
+message GetPricesRequest {
+  repeated int32 product_ids = 1;
+}
+
+message PriceResponse {
+  bool success = 1;
+  string message = 2;
+  Price price = 3;
+}
+
+message PricesResponse {
+  repeated Price prices = 1;
+}
+
